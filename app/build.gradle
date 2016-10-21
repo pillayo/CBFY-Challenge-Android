@@ -1,0 +1,90 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+def getGooglePlayServicesApiKey() {
+    if (REACTIVE_LOCATION_GMS_API_KEY != null && !REACTIVE_LOCATION_GMS_API_KEY.isEmpty()) {
+        return REACTIVE_LOCATION_GMS_API_KEY;
+    }
+    return ""
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+    defaultConfig {
+        applicationId "com.uxerlabs.cabifychallenge"
+        minSdkVersion 18
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        resValue "string", "API_KEY", getGooglePlayServicesApiKey()
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions {
+        preDexLibraries = false
+        javaMaxHeapSize "2g"
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+
+dependencies {
+    final ANDROID_SUPPORT_VERSION = '23.4.0'
+    final RETROIFIT2_VERSION = '2.1.0'
+
+    compile 'com.android.support:multidex:1.0.1'
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    //Library support
+    compile "com.android.support:appcompat-v7:$ANDROID_SUPPORT_VERSION"
+    compile "com.android.support:recyclerview-v7:$ANDROID_SUPPORT_VERSION"
+    compile "com.android.support:cardview-v7:$ANDROID_SUPPORT_VERSION"
+    compile "com.android.support:design:$ANDROID_SUPPORT_VERSION"
+
+    //Retrofit2
+    compile "com.squareup.retrofit2:retrofit:$RETROIFIT2_VERSION"
+    compile "com.squareup.retrofit2:converter-gson:$RETROIFIT2_VERSION"
+    compile "com.squareup.retrofit2:adapter-rxjava:$RETROIFIT2_VERSION"
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    //Google Play Service API
+    compile 'pl.charmas.android:android-reactive-location:0.10@aar'
+    compile 'com.google.android.gms:play-services:9.6.1'
+
+    //Reactive Android
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.2.1'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
+
+    //Butterknife
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+
+    //Glide - download async images
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    //FloatingButton with progress spinner
+    compile 'com.dmitrymalkovich.android:progress-fab:1.6'
+
+    testCompile 'junit:junit:4.12'
+}

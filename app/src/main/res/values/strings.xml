@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CabifyChallenge</string>
+    <string name="title_activity_maps">Cabify Challenge</string>
+    <string name="title_activity_map">Cabify Challenge</string>
+    <string name="start_point_info">Click to choose where you pick</string>
+    <string name="end_point_info">Click to choose a destination</string>
+    <string name="error_no_gps">It is necessary to enable location in Settings</string>
+    <string name="error_network">No Internet, check your connection</string>
+    <string name="error_comunication">Failed to get estimate</string>
+    <string name="error_comunication_info">Cabify may not operate in your city</string>
+    <string name="error_no_address">We couldn`t find the address</string>
+    <string name="search_address_or_place">Enter the address to search</string>
+    <string name="get_estimate">Obtener vehiculos y precio</string>
+
+
+</resources>

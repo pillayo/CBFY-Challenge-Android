@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">CabifyChallenge</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="start_point_info">Pulsa para elegir donde te recogen</string>
+    <string name="end_point_info">Pulsa para elegir un destino</string>
+    <string name="error_no_gps">Es necesario habilitar el GPS para obtener tu ubicación</string>
+    <string name="error_network">Parece que no tienes internet, comprueba tu conexión</string>
+    <string name="error_comunication">No se ha podido obtener la estimación</string>
+    <string name="error_comunication_info">Puede que Cabify no opera en esta ciudad</string>
+    <string name="error_no_address">No se ha encontrado la dirección</string>
+    <string name="search_address_or_place">Introduce la dirección a buscar</string>
+    <string name="get_estimate">Get vehicles and prices</string>
+</resources>

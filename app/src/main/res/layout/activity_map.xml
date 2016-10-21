@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.uxerlabs.cabifychallenge.view.MapActivity">
+
+    <include layout="@layout/content_map" />
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:background="@android:color/transparent"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/vehicles_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+    <com.dmitrymalkovich.android.ProgressFloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        app:layout_anchorGravity="right|end"
+        android:clickable="true">
+        <!-- app:layout_anchor="@+id/bottom_sheet" -->
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/get_estimate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@mipmap/ic_car"
+            android:visibility="gone"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar_floating"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </com.dmitrymalkovich.android.ProgressFloatingActionButton>
+
+</android.support.design.widget.CoordinatorLayout>
