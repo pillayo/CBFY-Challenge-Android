@@ -3,7 +3,7 @@
 ## Francisco Cuenca Montilla
 
 ###Info
-App that allows users to pick a origin and a destination and, using our API, give them an estimated price for every vehicle type<br/>
+App that allows users to pick a origin and a destination and, using CBFY API, give them an estimated price for every vehicle type<br/>
 <b>NOTE<b/>: The project weighs ~ 200 MB by demo videos below!
 
 ### ScreenShots
